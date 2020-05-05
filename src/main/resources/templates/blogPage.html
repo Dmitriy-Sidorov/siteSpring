@@ -11,11 +11,26 @@
         <header th:replace="'../tags/header'::header"/>
 
         <main role="main">
-
             <section>
-
+                <div class="container mb-4">
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>Блог</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-4" th:each="post : ${posts}">
+                            <div  class="alert alert-heading border-dark d-block">
+                                <h1 th:text="${post.title}"/>
+                                <div class="mb-3" th:text="${post.anons}"/>
+                                <a th:href="'blog/' + ${post.id}" class="btn btn-outline-primary">Detail</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
-
         </main>
 
         <footer th:replace="'../tags/footer'::footer"/>
