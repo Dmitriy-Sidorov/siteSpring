@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="'../tags/head'::head"/>
+    <body>
+        <header th:replace="'../tags/header'::header"/>
+
+        <main role="main">
+            <section>
+                <div class="container mb-4">
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>Опубликовать пост</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <form action="/blog/new-post" method="post">
+                                <div class="mb-2">
+                                    <input type="text" th:name="title" placeholder="Название статьи" class="form-control" required="required">
+                                </div>
+                                <div class="mb-2">
+                                    <textarea th:name="anons" placeholder="Аннонс статьи" class="form-control" th:maxlength="50" required="required"></textarea>
+                                </div>
+                                <div class="mb-2">
+                                    <textarea th:name="article" placeholder="Материал статьи" class="form-control" th:height="1000" required="required"></textarea>
+                                </div>
+                                <button class="btn btn-primary">Опубликовать</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer th:replace="'../tags/footer'::footer"/>
+        <scripts th:replace="'../tags/scripts'::scripts"/>
+    </body>
+</html>
