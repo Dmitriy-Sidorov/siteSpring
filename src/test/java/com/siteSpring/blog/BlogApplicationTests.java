@@ -1,4 +1,4 @@
-package com.siteSpring.blog;
+package com.sitespring.blog;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
