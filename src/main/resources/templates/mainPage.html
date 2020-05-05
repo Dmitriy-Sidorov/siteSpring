@@ -8,7 +8,7 @@
         <title th:text="${title}"></title>
     </head>
     <body>
-        <header th:insert="~{../tags/header :: header}" />
+        <header th:replace="'../tags/header'::header"/>
 
         <main role="main">
 
@@ -225,7 +225,7 @@
 
         </main>
 
-        <footer th:insert="../tags/footer :: footer" />
+        <footer th:replace="'../tags/footer'::footer"/>
 
 
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
