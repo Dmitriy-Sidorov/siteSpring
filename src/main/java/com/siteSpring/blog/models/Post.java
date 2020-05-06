@@ -20,6 +20,15 @@ public class Post {
 
     private int views;
 
+    public Post() {
+    }
+
+    public Post(String title, String anons, String article) {
+        this.title = title;
+        this.anons = anons;
+        this.article = article;
+    }
+
     public Long getId() {
         return id;
     }

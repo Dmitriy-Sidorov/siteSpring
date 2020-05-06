@@ -16,6 +16,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12 col-md-6 col-lg-4" th:each="post : ${posts}">
+                            <!--/*@thymesVar id="post" type="com.sitespring.blog.models.Post"*/-->
                             <div  class="alert alert-heading border-dark d-block">
                                 <h1 th:text="${post.title}"/>
                                 <div class="mb-3" th:text="${post.anons}"/>
