@@ -16,15 +16,19 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <form action="/blog/new-post" method="post">
+                            <form th:action="${action}" method="post">
                                 <div class="mb-2">
-                                    <input type="text" th:name="title" placeholder="Название статьи" class="form-control" required="required">
+                                    <input type="text" th:name="title" th:value="${post.title} != null ? ${post.title} : ''"
+                                           placeholder="Название статьи" class="form-control" required="required">
                                 </div>
                                 <div class="mb-2">
-                                    <textarea th:name="anons" placeholder="Аннонс статьи" class="form-control" th:maxlength="50" required="required"></textarea>
+                                    <textarea th:name="anons" th:utext="${post.anons} != null ? ${post.anons} : ''" placeholder="Аннонс статьи"
+                                              class="form-control" th:maxlength="50" required="required"></textarea>
                                 </div>
                                 <div class="mb-2">
-                                    <textarea th:name="article" placeholder="Материал статьи" class="form-control" th:height="1000" required="required"></textarea>
+                                    <textarea th:name="article" th:utext="${post.article} != null ? ${post.article} : ''"
+                                              placeholder="Материал статьи" style="margin-top: 0;margin-bottom: 0;height: 500px;"
+                                              class="form-control" th:height="1000" required="required"></textarea>
                                 </div>
                                 <button class="btn btn-primary">Опубликовать</button>
                             </form>

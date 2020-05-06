@@ -19,8 +19,11 @@
                             <!--/*@thymesVar id="post" type="com.sitespring.blog.models.Post"*/-->
                             <div  class="alert alert-heading border-dark d-block">
                                 <h1 th:text="${post.title}"/>
-                                <div class="mb-3" th:text="${post.anons}"/>
-                                <a th:href="'blog/' + ${post.id}" class="btn btn-outline-primary">Detail</a>
+                                <div class="mb-3" th:utext="${post.anons}"/>
+                                <div class="align-items-center d-flex justify-content-between">
+                                    <div class="text-black-50">Views: <span th:text="${post.views}"/></div>
+                                    <a th:href="'blog/' + ${post.id}" class="btn btn-outline-primary">Detail</a>
+                                </div>
                             </div>
                         </div>
                     </div>

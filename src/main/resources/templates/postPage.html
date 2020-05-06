@@ -26,7 +26,7 @@
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <div th:text="${post.article}"></div>
+                            <div th:utext="${#strings.replace( #strings.escapeXml(post.article),T(java.lang.System).getProperty('line.separator'),'&lt;br /&gt;')}"></div>
                         </div>
                     </div>
                 </div>
